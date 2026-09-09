@@ -275,18 +275,26 @@ footer a:hover { color:#fff; }
 }
 
 
-/* Small personal portrait — V4 addition only */
+
+/* =========================================================
+   ABOUT PORTRAIT + RESPONSIVE LAYOUT
+   ========================================================= */
+
 .about-grid {
+  display: grid;
   grid-template-columns: .78fr .46fr .92fr;
   gap: 4vw;
   align-items: start;
+  margin-top: 70px;
 }
+
 .about-portrait {
   position: relative;
   width: min(100%, 280px);
   justify-self: center;
   padding-top: 4px;
 }
+
 .portrait-label {
   display: flex;
   justify-content: space-between;
@@ -297,16 +305,24 @@ footer a:hover { color:#fff; }
   font-weight: 700;
   letter-spacing: .15em;
 }
+
 .portrait-placeholder {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
   aspect-ratio: 4 / 5;
+  margin: 0;
   background: #deded9;
   border: 1px solid rgba(17,17,17,.18);
-  position: relative;
   overflow: hidden;
   display: grid;
   place-items: center;
 }
+
 .portrait-placeholder img {
+  position: relative;
+  inset: auto;
   width: 100%;
   height: 100%;
   display: block;
@@ -314,22 +330,21 @@ footer a:hover { color:#fff; }
   object-position: center;
   filter: grayscale(1) contrast(.95);
 }
+
 .portrait-placeholder::before,
 .portrait-placeholder::after {
   content: "";
   position: absolute;
+  inset: 9%;
+  width: auto;
+  height: auto;
   border: 1px solid rgba(17,17,17,.14);
-  width: 82%;
-  height: 82%;
+  pointer-events: none;
 }
+
 .portrait-placeholder::before { transform: rotate(4deg); }
 .portrait-placeholder::after { transform: rotate(-4deg); }
-.portrait-placeholder span {
-  position: relative;
-  z-index: 1;
-  font: 700 64px/1 "Space Grotesk", sans-serif;
-  letter-spacing: -.08em;
-}
+
 .portrait-caption {
   border-bottom: 1px solid var(--line);
   padding: 13px 0 16px;
@@ -337,37 +352,174 @@ footer a:hover { color:#fff; }
   flex-direction: column;
   gap: 4px;
 }
+
 .portrait-caption b {
   font: 600 11px "Space Grotesk", sans-serif;
   letter-spacing: .12em;
 }
+
 .portrait-caption span {
   color: #777;
   font-size: 8px;
   letter-spacing: .12em;
 }
+
+/* Desktop order: portrait / statement / copy */
+.about-grid > .about-portrait { grid-column: 1; grid-row: 1; }
+.about-grid > h2 { grid-column: 2; grid-row: 1; }
+.about-grid > .about-copy { grid-column: 3; grid-row: 1; }
+
+/* Tablet: retain the editorial hierarchy, but stack cleanly. */
 @media (max-width: 900px) {
-  .about-grid { grid-template-columns: 1fr 1fr; }
-  .about-portrait {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: end;
+  .about {
+    overflow: hidden;
   }
-  .about-copy {
-    grid-column: 1 / -1;
+
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 55px;
+    gap: 0;
+  }
+
+  .about-grid > .about-portrait {
+    order: 1;
+    width: min(100%, 360px);
+    margin: 0 auto 42px;
+    padding: 0;
+  }
+
+  .portrait-placeholder {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .about-grid > h2 {
+    order: 2;
+    width: 100%;
+    margin: 0 0 42px;
+    font-size: clamp(52px, 9vw, 82px);
+    line-height: .86;
+    letter-spacing: -.065em;
+  }
+
+  .about-grid > .about-copy {
+    order: 3;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0;
   }
 }
+
+/* Phone */
 @media (max-width: 600px) {
-  .about-grid { grid-template-columns: 1fr; }
-  .about-portrait {
-    grid-column: 1;
-    grid-row: auto;
-    width: min(72%, 260px);
-    justify-self: start;
-    margin-bottom: 5px;
+  .about {
+    padding-top: 95px;
+    padding-bottom: 90px;
+    overflow: hidden;
   }
-  .about-copy { grid-column: 1; }
+
+  .about .section-inner {
+    width: 90vw;
+  }
+
+  .about-grid {
+    margin-top: 44px;
+  }
+
+  .about-grid > .about-portrait {
+    width: min(82vw, 300px);
+    margin: 0 auto 32px;
+  }
+
+  .portrait-label {
+    width: 100%;
+    margin-bottom: 12px;
+    font-size: 7.5px;
+    letter-spacing: .13em;
+  }
+
+  .portrait-placeholder {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .portrait-caption {
+    padding: 12px 0 14px;
+  }
+
+  .portrait-caption b {
+    font-size: 10px;
+  }
+
+  .portrait-caption span {
+    font-size: 7px;
+  }
+
+  .about-grid > h2 {
+    width: 100%;
+    margin: 0 0 34px;
+    font-size: clamp(42px, 11.2vw, 57px);
+    line-height: .87;
+    letter-spacing: -.065em;
+  }
+
+  .about-copy {
+    max-width: none;
+  }
+
+  .about-copy .lead {
+    font-size: 19px;
+    line-height: 1.32;
+    margin-bottom: 20px;
+  }
+
+  .about-copy p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .about-meta {
+    margin-top: 38px;
+    padding-top: 20px;
+    gap: 12px;
+  }
+
+  .about-meta b {
+    font-size: 24px;
+  }
+
+  .about-meta span {
+    font-size: 9px;
+  }
 }
+
+@media (max-width: 380px) {
+  .about-grid > .about-portrait {
+    width: min(84vw, 285px);
+  }
+
+  .about-grid > h2 {
+    font-size: 39px;
+  }
+
+  .about-meta {
+    gap: 8px;
+  }
+
+  .about-meta b {
+    font-size: 22px;
+  }
+}
+
 /* Mobile contact section fix */
 @media (max-width: 600px) {
   .contact {
