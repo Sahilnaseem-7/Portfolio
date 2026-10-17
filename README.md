@@ -8,23 +8,17 @@ Overview
 
 This portfolio is designed as a visual presentation of practical data
 work rather than a traditional resume page. It brings together project
-results, analytical insights, machine-learning work, education,
+purposes, data tools, education,
 certifications, technical skills, and contact information in a single
 responsive website.
 
 The current portfolio highlights two featured projects:
 
-EV Buyer Prediction --- a Random Forest classification model for
-estimating the probability of customers purchasing an electric
-vehicle.
+DataPrism --- an interactive data analytics platform for importing CSV and Excel business data, cleaning and exploring it, and presenting useful metrics, charts, and filtered dashboards. It is designed to make raw business data easier to understand and act on.
 
-Superstore Sales Analysis --- a retail analysis exploring sales,
-profit, discounting, quantity, categories, segments, and regional
-performance.
+TraceAtlas --- an actively developed data provenance and lineage platform for AI/ML teams. It registers datasets, profiles CSV and Parquet files, tracks versions and lineage relationships, and surfaces downstream impact.
 
-The site is structured so additional projects can be added as the
-portfolio grows.
-
+The site is structured so additional projects can be added as the portfolio grows.
 Sections
 
 Home
@@ -37,10 +31,9 @@ Selected Work
 Highlights featured projects with: - Project descriptions - Technologies
 used - Key results - Links to the corresponding GitHub repositories
 
-Project Insights
+Project Focus
 
-Presents selected analytical outputs from the Superstore project and
-model-validation information from the EV Buyer Prediction project.
+Explains the goals behind DataPrism and TraceAtlas, with links to both repositories.
 
 About
 
@@ -76,33 +69,17 @@ professional networking.
 
 Featured Projects
 
-EV Buyer Prediction
+DataPrism
 
-A machine-learning classification project using a Random Forest
-model to predict the likelihood of an individual purchasing an electric
-vehicle.
+An interactive data analytics platform for importing CSV and Excel business datasets, cleaning and exploring the data, and building filtered dashboards and visualizations. It aims to make the path from raw files to clear, decision-ready insight more approachable.
 
-Techniques / Tools - Python - Pandas - Scikit-learn - Exploratory
-Data Analysis - Random Forest Classification - 5-fold Cross-Validation
+Technologies: Python, HTML, CSS, JavaScript, SQLite, openpyxl, Docker, Docker Compose.
 
-Model result
+TraceAtlas (currently in progress)
 
-Mean ROC-AUC: 0.9353
+A data provenance and lineage platform for AI/ML teams. It supports dataset registration and profiling, version history, lineage graphs, downstream impact analysis, and audit events.
 
-Superstore Sales Analysis
-
-A retail analytics project focused on understanding how discounting
-affects profitability across categories, segments, and regions.
-
-Techniques / Tools - Python - Pandas - Matplotlib - Exploratory Data
-Analysis - Business Analysis - Data Visualization
-
-Key finding
-
-Discounts above approximately 50% were associated with
-loss-making products in the analyzed data.
-
-The portfolio includes four selected visualizations from this analysis.
+Technologies: Python, FastAPI, Uvicorn, Pydantic, SQLAlchemy, Alembic, PostgreSQL, asyncpg, Next.js, React, TypeScript, React Flow, Tailwind CSS, Axios, Pandas, PyArrow, Docker Compose.
 
 Tech Stack
 

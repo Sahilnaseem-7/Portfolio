@@ -552,3 +552,32 @@ footer a:hover { color:#fff; }
     max-width: 100%;
   }
 }
+
+/* Project summaries */
+.project-status { display:inline-flex; margin:18px 0 -12px !important; padding:7px 9px; border:1px solid #777; color:#fff !important; font-size:9px !important; letter-spacing:.15em; font-weight:700; }
+.project-result b { font-size:clamp(25px,3vw,40px); line-height:.98; }
+.project-result small { display:block; margin-top:12px; }
+.project-focus { padding:135px 0; overflow:hidden; }
+.project-focus-head { display:grid; grid-template-columns:1fr 1fr; gap:8vw; align-items:end; }
+.project-focus-head h2 { font:700 clamp(58px,7.2vw,100px)/.85 "Space Grotesk",sans-serif; letter-spacing:-.075em; margin:28px 0 0; }
+.project-focus-head h2 em { color:#777; font-style:normal; }
+.project-focus-head > p { max-width:430px; color:#666; line-height:1.6; font-size:14px; padding-bottom:5px; }
+.project-focus-grid { display:grid; grid-template-columns:1fr 1fr; margin-top:72px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.focus-card { padding:30px 34px 34px 0; }
+.focus-card + .focus-card { border-left:1px solid var(--line); padding-left:34px; padding-right:0; }
+.focus-card .mini-label { color:#777; font-size:9px; letter-spacing:.17em; font-weight:700; }
+.focus-card h3 { margin:34px 0 16px; font:600 clamp(34px,4vw,54px)/.96 "Space Grotesk",sans-serif; letter-spacing:-.055em; }
+.focus-card p { max-width:500px; min-height:72px; color:#666; font-size:13px; line-height:1.65; }
+.focus-card a { display:inline-flex; gap:24px; margin-top:20px; font-size:11px; font-weight:700; }
+.focus-card a span { transition:transform .3s var(--ease); }
+.focus-card a:hover span { transform:translate(4px,-4px); }
+.focus-card-current .mini-label { color:#416c55; }
+@media (max-width:900px) { .project-focus-head { grid-template-columns:1fr; gap:30px; } }
+@media (max-width:600px) {
+  .project-focus { padding:95px 0; }
+  .project-focus-grid { grid-template-columns:1fr; margin-top:50px; }
+  .focus-card,.focus-card + .focus-card { padding:26px 0; border-left:0; }
+  .focus-card + .focus-card { border-top:1px solid var(--line); }
+  .focus-card p { min-height:0; }
+  .project-result b { font-size:34px; }
+}
