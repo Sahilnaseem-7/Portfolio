@@ -581,3 +581,10 @@ footer a:hover { color:#fff; }
   .focus-card p { min-height:0; }
   .project-result b { font-size:34px; }
 }
+
+/* DataPrism live demo link */
+.project-links { display:flex; align-items:center; gap:14px; flex:0 0 auto; }
+.project-live-link { display:inline-flex; align-items:center; gap:6px; padding:8px 0; border-bottom:1px solid #777; color:#fff; font-size:11px; white-space:nowrap; }
+.project-live-link span { transition:transform .3s var(--ease); }
+.project-live-link:hover span { transform:translate(3px,-3px); }
+@media (max-width:600px) { .project-links { gap:10px; } .project-live-link { font-size:10px; } }
